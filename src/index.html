@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset=" utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Display Country Data</title>
+  <script type="text/javascript" src="./fileLoader.js"></script>
+</head>
+
+<body>
+  <h4>Input the filename of a json file to load from the server (default: .json)</h4>
+  <form id="uploadForm">
+    <div>
+      <label for="filenameInput">Filename:</label>
+      <input type="text" id="filenameInput" />
+      <input type="submit" value="Load File" />
+      <span id="error" style="color: red" />
+    </div>
+    <div>
+      <ul id="countryDataList"></ul>
+    </div>
+  </form>
+
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", handleSubmit);
+    document.getElementById("filenameInput").addEventListener("focus", clearError);
+  </script>
+</body>
+
+</html>
